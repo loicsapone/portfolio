@@ -1,0 +1,6 @@
+webpack_encore:
+    output_path: '%kernel.project_dir%/public/build'
+
+    # Set attributes that will be rendered on all script and link tags
+    script_attributes:
+        defer: true
