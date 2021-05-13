@@ -9,6 +9,7 @@ Encore
     // path
     .setOutputPath('public/build/')
     .setPublicPath('/build')
+
     // entries
     .addEntry('app', './assets/app.js')
 
