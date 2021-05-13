@@ -9,20 +9,18 @@ Encore
     // path
     .setOutputPath('public/build/')
     .setPublicPath('/build')
-
-    // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
-    .splitEntryChunks()
-
     // entries
     .addEntry('app', './assets/app.js')
 
     // features
+    .splitEntryChunks()
+    .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
-    .enableSingleRuntimeChunk()
     .enableSassLoader()
+    .enablePostCssLoader()
 
     // babel config
     .configureBabel((config) => {
