@@ -1,4 +1,19 @@
 {
+    "doctrine/annotations": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "a2759dd6123694c8d901d0ec80006e044c2e6457"
+        },
+        "files": [
+            "config/routes/annotations.yaml"
+        ]
+    },
+    "doctrine/lexer": {
+        "version": "1.2.1"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -10,6 +25,18 @@
     },
     "psr/log": {
         "version": "1.1.4"
+    },
+    "sensio/framework-extra-bundle": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.2",
+            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
+        },
+        "files": [
+            "config/packages/sensio_framework_extra.yaml"
+        ]
     },
     "symfony/asset": {
         "version": "v5.2.7"
@@ -127,6 +154,9 @@
     "symfony/polyfill-php80": {
         "version": "v1.22.1"
     },
+    "symfony/profiler-pack": {
+        "version": "v1.0.5"
+    },
     "symfony/property-access": {
         "version": "v5.2.4"
     },
@@ -149,6 +179,9 @@
     },
     "symfony/service-contracts": {
         "version": "v2.4.0"
+    },
+    "symfony/stopwatch": {
+        "version": "v5.2.7"
     },
     "symfony/string": {
         "version": "v5.2.6"
@@ -181,6 +214,20 @@
     },
     "symfony/var-exporter": {
         "version": "v5.2.7"
+    },
+    "symfony/web-profiler-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
+        },
+        "files": [
+            "config/packages/dev/web_profiler.yaml",
+            "config/packages/test/web_profiler.yaml",
+            "config/routes/dev/web_profiler.yaml"
+        ]
     },
     "symfony/webpack-encore-bundle": {
         "version": "1.9",
