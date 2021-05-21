@@ -1,0 +1,18 @@
+commands:
+    start:
+        help: Start local server
+        steps:
+            - docker-compose up -d
+            - symfony local:server:start -d
+            - symfony server:log
+
+    stop:
+        help: Stop local server
+        steps:
+            - docker-compose down
+            - symfony local:server:stop
+
+    watch:
+        help: Run Yarn watch command
+        steps:
+            - symfony local:run yarn encore dev-server
