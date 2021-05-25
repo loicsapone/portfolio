@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .social:after {
-    content: "";
-    @apply h-24 w-1 mt-2 m-auto bg-gray-200;
-  }
-
-  .link {
-    @apply font-bold border-0 border-b-2 border-gray-400 hover:border-gray-600;
-  }
-}
-
 @layer utilities {
   @variants responsive {
     .w-spacing-2 {
@@ -24,5 +13,61 @@
     .w-spacing-8 {
       word-spacing: 2rem;
     }
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slide-up {
+  from { transform: translateY(100px); }
+  to { transform: translateY(0); }
+}
+@keyframes fade-slide-up {
+  from { transform: translateY(-100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fade-slide-right {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+header {
+  h1 {
+    animation: fade-slide-right 1s ease-in-out;
+  }
+  h2 {
+    animation: fade-in 2s ease-in-out;
+  }
+}
+
+.social {
+  li {
+    animation: fade-in 1s ease-in-out;
+  }
+
+  &:after {
+    content: "";
+    @apply h-24 w-1 mt-2 m-auto bg-gray-200;
+    animation: slide-up .5s ease-in-out;
+  }
+}
+
+.link {
+  @apply font-bold border-0 border-b-2 border-gray-400 hover:border-gray-600;
+}
+
+#about, #github, #contact {
+  opacity: 0;
+  transform: translateY(15rem);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
