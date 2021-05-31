@@ -6,24 +6,19 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                github: {
-                    DEFAULT: '#090c10',
-                    box: '#0d1117',
-                    text: '#ffffff',
-                    alt: '#8b949e'
+                primary: {
+                    light: '#112240',
+                    DEFAULT: '#0a192f'
                 },
-                twitter: {
-                    DEFAULT: '#ffffff',
-                    box: '#ffffff',
-                    text: '#0f1419',
-                    alt: '#5b7083'
-                }
             },
             fontFamily: {
-                sans: [...defaultTheme.fontFamily.sans]
+                arvo: ['Arvo'],
+                sans: ['Roboto', ...defaultTheme.fontFamily.sans]
             }
         }
     },
     variants: {},
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
 }

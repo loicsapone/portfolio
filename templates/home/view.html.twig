@@ -1,1 +1,187 @@
 {% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="flex items-center h-screen">
+        <div class="flex-col items-center max-w-4xl mx-auto px-4 md:px-6 py-24">
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-arvo font-bold tracking-tighter w-spacing-2 md:w-spacing-4 lg:w-spacing-8">loïc sapone</h1>
+            <h2 class="mt-4 text-3xl md:text-4xl lg:text-5xl">développeur web</h2>
+        </div>
+    </header>
+
+    <nav class="fixed hidden lg:block bottom-0 left-6 xl:left-12 z-10">
+        <ul class="social flex flex-col">
+            <li class="flex justify-center p-1">
+                <a href="https://github.com/loicsapone" class="p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" title="Voir mon profil Github (nouvelle fenêtre)">
+                    <svg class="h-6 w-6 text-gray-200" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>GitHub</title>
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="flex justify-center p-1">
+                <a href="https://connect.symfony.com/profile/loic_sapone" class="rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" title="Voir mon profil Symfony Connect (nouvelle fenêtre)">
+                    <svg class="h-8 w-8 fill-current text-gray-200" xmlns="http://www.w3.org/2000/svg" width="257" height="256" viewBox="0 0 256 257">
+                        <title>Symfony Connect</title>
+                        <path d="M183.706 48.124c-12.986.453-24.32 7.61-32.757 17.51-9.342 10.855-15.557 23.73-20.035 36.872-8.01-6.565-14.19-15.064-27.041-18.77-9.933-2.852-20.366-1.674-29.96 5.474-4.545 3.395-7.676 8.527-9.165 13.351-3.855 12.537 4.053 23.694 7.645 27.7l7.853 8.416c1.619 1.65 5.518 5.955 3.612 12.127-2.06 6.71-10.15 11.055-18.448 8.495-3.706-1.13-9.03-3.891-7.838-7.779.493-1.59 1.631-2.78 2.241-4.155.56-1.181.827-2.067.997-2.587 1.516-4.95-.555-11.39-5.857-13.025-4.946-1.516-10.007-.315-11.969 6.054-2.225 7.235 1.237 20.366 19.783 26.084 21.729 6.676 40.11-5.155 42.717-20.586 1.642-9.665-2.722-16.845-10.717-26.08l-6.514-7.204c-3.946-3.942-5.301-10.661-1.217-15.825 3.446-4.356 8.354-6.215 16.392-4.029 11.733 3.186 16.963 11.327 25.69 17.893-3.603 11.819-5.958 23.682-8.09 34.32l-1.299 7.931c-6.238 32.721-11 50.688-23.375 61.003-2.493 1.773-6.057 4.427-11.429 4.612-2.816.087-3.726-1.85-3.765-2.694-.067-1.977 1.599-2.883 2.706-3.773 1.654-.902 4.155-2.398 3.985-7.191-.18-5.664-4.872-10.575-11.654-10.35-5.08.173-12.823 4.954-12.532 13.705.303 9.039 8.728 15.813 21.43 15.384 6.79-.233 21.952-2.997 36.895-20.76 17.392-20.362 22.256-43.705 25.915-60.79l4.084-22.556c2.269.272 4.695.453 7.334.516 21.661.457 32.496-10.763 32.657-18.924.107-4.939-3.241-9.799-7.928-9.689-3.355.095-7.57 2.328-8.582 6.968-.988 4.552 6.893 8.66.733 12.65-4.376 2.832-12.221 4.828-23.269 3.206l2.009-11.103c4.1-21.055 9.157-46.954 28.341-47.584 1.398-.071 6.514.063 6.633 3.446.035 1.13-.245 1.418-1.568 4.005-1.347 2.017-1.855 3.734-1.792 5.707.185 5.376 4.273 8.909 10.185 8.696 7.916-.256 10.193-7.963 10.063-11.921-.32-9.3-10.122-15.175-23.1-14.75z"/>
+                    </svg>
+                </a>
+            </li>
+            <li class="flex justify-center p-1">
+                <a href="https://twitter.com/loicsapone" class="p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" title="Voir mon profil Twitter (nouvelle fenêtre)">
+                    <svg class="h-6 w-6 text-gray-200" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>Twitter</title>
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="flex justify-center p-1">
+                <a href="https://www.linkedin.com/in/loicsapone/" class="p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" title="Voir mon profil Linkedin (nouvelle fenêtre)">
+                    <svg class="h-6 w-6 text-gray-200" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>LinkedIn</title>
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="flex items-center relative overflow-hidden">
+            <div class="flex flex-col items-center max-w-4xl mx-auto px-4 md:px-6 py-20">
+                <h3 class="flex justify-between w-full mb-8">
+                    <span class="text-3xl md:text-4xl lg:text-5xl font-bold">Qui suis-je ?</span>
+                </h3>
+
+                <div class="w-full lg:text-lg">
+                    <p class="mb-6">
+                        Salut, je m'appelle <strong>Loïc Sapone</strong> et suis développeur web depuis bientôt 10 ans à Grenoble.<br>
+                        Passioné par le <strong>développement backend et le devops</strong>, je réfléchis et créé des applications et sites web sur-mesure.
+                    </p>
+
+                    <p class="mb-6">
+                        Accueilli dès mes début à l'agence grenobloise <a href="https://www.mezcalito.fr/" class="link" target="_blank" title="Voir le site de Mezcalito (nouvelle fenêtre)">Mezcalito</a>,
+                        j'ai eu l'opportunité de découvrir le monde des <strong>SCOP</strong> et de devenir <strong>associé</strong> de la manufacture.
+                        Je travaille sur des projets institutionnels (<a href="http://fcgrugby.com/" class="link" target="_blank" title="Voir le site du FCG Rugby (nouvelle fenêtre)">FC Grenoble Rugby</a>)
+                        et e-commerce (<a href="https://location-ski.sport2000.fr/" class="link" target="_blank" title="Voir le site de location de ski de Sport 2000 (nouvelle fenêtre)">Location de ski Sport 2000</a>).
+                    </p>
+
+                    <p class="mb-6">
+                        J'ai également pu mettre à profit mes compétences sur <strong>PrestaShop</strong> en donnant des cours aux étudiants du <a href="http://real-mmi-grenoble.fr/" class="link" target="_blank" title="Voir le site du DUT MMI de Grenoble (nouvelle fenêtre)">DUT MMI de Grenoble</a> pendant 4 ans.<br>
+                        L'objectif : <strong>découvrir l'UX</strong> des sites e-commerce, <strong>réaliser les maquettes</strong> d'une boutique fictive et <strong>créer le thème</strong> PrestaShop correspondant.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex items-center relative overflow-hidden">
+            <div class="absolute top-40 md:top-20 -right-32">
+                <img class="w-60 md:w-72 xl:w-96 h-60 md:h-72 xl:h-96 opacity-10" alt="Github logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAMAAACTGUWNAAAAsVBMVEUAAAD////5+fn////////////8/Pzu7u7////////////6+vv////////////+/v7+/v77+/v////////7+/v+/v7////////////////////+/v7////////////9/f3////+/v78/Pz29vb////+/v7////////////////9/f3////////////////////////+/v7////////////8/Pz////////+/v78/Pz///8zRV0ZAAAAOnRSTlMAjwV7+/AVApqE4BH05WxKHwz4ZQ5UcOzpyTUn0rFaGEIqHAmTTdamd80vutq+n3+2X8SjrCSIRWg85v0HfgAAENJJREFUeNrs3dl6mzAQBeADAYMXbIzteN/TeslSx0maZt7/wZrla9M0sY2EAEnov/PtHCOhQQiowrOf1csvHDrAKb+o2888GIJ47eaybFmXxOTSssrLZtvkkEizFN74Y0pg7N+EpSYMZnY4v1ldkRBXq1UntGHENR1a4w0JthlbwymMU6aD8rVLKXGvrYEJ4bD2bN0PKGVBfz1rw/hk+u0yoIwEl40BjH9sW0GXMhUFrS2MV/NWL6IcRL3WHIUX1lmqLz6Deogim1QcyplTmaCYvM4FSeKiU7yWRdMakURGVqH6FXbDJ+n4jaJ0K6aNPkmp3yjCMnlq1UhaNUv3CBaWS1JzrQX0NZO9/C/c1Qx6etyTIkaP0E9jQwoZNaCX0j0pZlSFPtpW7h0Hdo6ly2ODpUWKspZQn9chhSnfJLLVmns/26jdoKgqc+d52F7d2diTpt+czIWi49BMqoZz4VYFoR+RPu5Ue3LpdXQq/7NIrfuh4R1p524IZdxK3PLnV7uFGoYr0tRKiYugo0DPn5fbgvQkfNwukg+5hRr//d+4Ut+Q1rukPfccsmqWqRAsSbtDiwL8/d/0pNw5sQ6oMII1pPODCuUH5FKSdLdhevolSKRUoOHnj0CiBM60v/v/insGSZxRQUmSQMGmX9kSqFaowCq5r8mKXf/8Eyh6/RkTMPUn0iqBJ1P/Z/m9aFwn41UdcZj6/6VHAudk/HWOU0z9P1A/AVN/pgRM/T9ROwEz/zLNxKb+X1I3AaXf+kpTCweZ/sMBCj4kM/Vn6guZ+h+jYAKm/jknYOp/QgWf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"/>
+            </div>
+
+            <div class="flex flex-col items-center max-w-4xl mx-auto px-4 md:px-6 py-20">
+                <h3 class="flex justify-between w-full mb-8">
+                    <span class="text-3xl md:text-4xl lg:text-5xl font-bold">Mes projets open source</span>
+                </h3>
+
+                <nav class="grid grid-cols-6 gap-6">
+                    {% for repository in repositories %}
+                        <a class="col-span-6 md:col-span-3 flex flex-col px-4 py-6 bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent" href="{{ repository.url }}" rel="nofollow" target="_blank" title="Voir le projet {{ repository.name }} (nouvelle fenêtre)">
+                            <div class="flex justify-between">
+                                <h4 class="font-bold">{{ repository.name }}</h4>
+                                {% if repository.forked %}<small class="text-xs italic">forked</small>{% endif %}
+                            </div>
+
+                            <span class="flex flex-1 mt-2 text-gray-200">{{ repository.description }}</span>
+
+                            <time class="flex items-center justify-end mt-1 text-gray-400" datetime="{{ repository.createdAt|date('Y-m-d H:i:s') }}">
+                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+
+                                <span class="ml-2 text-sm">{{ repository.createdAt|format_date(pattern='dd LLLL Y', locale='fr') }}</span>
+                            </time>
+                        </a>
+                    {% endfor %}
+                </nav>
+            </div>
+        </section>
+
+        <section class="relative overflow-hidden">
+            <div class="absolute top-40 md:top-20 -left-32">
+                <img class="w-60 md:w-72 xl:w-96 h-60 md:h-72 xl:h-96 opacity-10" alt="Github logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAMAAACTGUWNAAAArlBMVEUAAAD////29vb////////8/Pz////////////////////////////+/v79/f3////9/f3T09P////9/f3+/v7////////////6+vr////////7+/v////////6+vr7+/v5+fn6+vr09PTJycnp6en////+/v7t7e1gYGD7+/v9/f34+Pj////v7+/////////6+vr6+vr7+/v5+fn9/f3////39/f6+vr///////9+NG9JAAAAOXRSTlMAHwHxZg7CgD3u4ZmHyjkhHBR6LpjS5pF++8SdbjUSl5FfQxwH980VB653MfMo8Ol0UrZv3cNNqgwXl3/EAAANlElEQVR42uyd63LTQAyFZbmO4zT3e1NKKSm0lDszXPT+L0ZgBobBTjZOLK12re83tN09XlnS8e5CKIyTX4xXdJirp9//cIRgNADCDuzneT69olrc5jum8AvT4gw2vV5vSSez3P33DRj1wVEynlNjzMcWlGrw2M9X1DirvG8aHMG26C2JiWWvmIBxIOy8JAG6Fo6qGOYrEmOVDy07+jfXnC16KYmSWnb0h9HDG/LEtu2xCAGGU/LJbZtjEQJsBCKPOxa1VILsOanheQZt41k+IEUM8mfQJiYFqaPI2hKJkjnpJH0YQezgr7RHMdNh7Mug8J72HCYtIF7uk2sKgHkCEYIAd18oEKZDiI+7j1cUDPEFojCCT6SBCGG4pgCJJyPSnvnEHYjUll1HcQmhc0FhcxtyjwghU9jzqUsRcKc00Nj/P9sgJUDoq2o4n8OgH2I+1KGI6EBodCkyuhAOCDcvKDrWwTSIMNjKy8EklDdBnNO/IwX9xJT8hJkORZX8hJcORZf8lLhW3aYOvfNzFBegFIyh83MMyx86XwQZtQaFzSGEO2oRb7VlQwgfAvLcmzDLtCkQbfEVQlEWd/G1j8WjnkUQefG1h+VXUMIltRQVlj22d/6JLjVEoXbGHzWtofetnn+iazgFa/7E8uGQzX/t5pw1n/8QgV9vz3+tNWDz/5c4FLD4UzMK2fP/L8GvAZv/egpY/CkTchSy57/WGrD5ryRcBSz+1IxC9vzvI8g1YPN/AIHO3IyM/Xy/B14QFmQc4LrCIzP/y0FIHlmL/V8FTn2r/XcVTr3Fn6P4Ckz0yTiG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"/>
+            </div>
+
+            <div class="flex flex-col items-center max-w-4xl mx-auto px-4 md:px-6 py-20">
+                <h3 class="flex items-center w-full mb-8">
+                    <span class="text-3xl md:text-4xl lg:text-5xl font-bold">On reste en contact</span>
+                </h3>
+
+                <form class="w-full">
+                    <div class="grid grid-cols-6 gap-6 ">
+                        <div class="col-span-6 sm:col-span-3">
+                            <label for="name" class="font-bold text-gray-200">Nom</label>
+                            <input type="text" name="name" id="name" class="mt-1 w-full bg-primary focus:bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-200 focus:border-transparent">
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label for="email" class="font-bold text-gray-200">Email</label>
+                            <input type="email" name="email" id="email" class="mt-1 w-full bg-primary focus:bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-200 focus:border-transparent">
+                        </div>
+
+                        <div class="col-span-6">
+                            <label for="message" class="font-bold text-gray-200">Message</label>
+                            <textarea name="message" id="message" class="mt-1 w-full bg-primary focus:bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-200 focus:border-transparent" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start w-full mt-1">
+                        <button type="submit" class="inline-flex justify-center py-2 px-4 bg-primary hover:bg-primary-light rounded-md border border-gray-500">
+                            Envoyer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="flex justify-center items-center max-w-4xl mx-auto py-8">
+        <ul class="lg:hidden flex">
+            <li class="flex justify-center p-1">
+                <a href="https://github.com/loicsapone" class="p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" title="Voir mon profil Github (nouvelle fenêtre)">
+                    <svg class="h-6 w-6 text-gray-200" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>GitHub</title>
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="flex justify-center p-1">
+                <a href="https://connect.symfony.com/profile/loic_sapone" class="rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" title="Voir mon profil Symfony Connect (nouvelle fenêtre)">
+                    <svg class="h-8 w-8 fill-current text-gray-200" xmlns="http://www.w3.org/2000/svg" width="257" height="256" viewBox="0 0 256 257">
+                        <title>Symfony Connect</title>
+                        <path d="M183.706 48.124c-12.986.453-24.32 7.61-32.757 17.51-9.342 10.855-15.557 23.73-20.035 36.872-8.01-6.565-14.19-15.064-27.041-18.77-9.933-2.852-20.366-1.674-29.96 5.474-4.545 3.395-7.676 8.527-9.165 13.351-3.855 12.537 4.053 23.694 7.645 27.7l7.853 8.416c1.619 1.65 5.518 5.955 3.612 12.127-2.06 6.71-10.15 11.055-18.448 8.495-3.706-1.13-9.03-3.891-7.838-7.779.493-1.59 1.631-2.78 2.241-4.155.56-1.181.827-2.067.997-2.587 1.516-4.95-.555-11.39-5.857-13.025-4.946-1.516-10.007-.315-11.969 6.054-2.225 7.235 1.237 20.366 19.783 26.084 21.729 6.676 40.11-5.155 42.717-20.586 1.642-9.665-2.722-16.845-10.717-26.08l-6.514-7.204c-3.946-3.942-5.301-10.661-1.217-15.825 3.446-4.356 8.354-6.215 16.392-4.029 11.733 3.186 16.963 11.327 25.69 17.893-3.603 11.819-5.958 23.682-8.09 34.32l-1.299 7.931c-6.238 32.721-11 50.688-23.375 61.003-2.493 1.773-6.057 4.427-11.429 4.612-2.816.087-3.726-1.85-3.765-2.694-.067-1.977 1.599-2.883 2.706-3.773 1.654-.902 4.155-2.398 3.985-7.191-.18-5.664-4.872-10.575-11.654-10.35-5.08.173-12.823 4.954-12.532 13.705.303 9.039 8.728 15.813 21.43 15.384 6.79-.233 21.952-2.997 36.895-20.76 17.392-20.362 22.256-43.705 25.915-60.79l4.084-22.556c2.269.272 4.695.453 7.334.516 21.661.457 32.496-10.763 32.657-18.924.107-4.939-3.241-9.799-7.928-9.689-3.355.095-7.57 2.328-8.582 6.968-.988 4.552 6.893 8.66.733 12.65-4.376 2.832-12.221 4.828-23.269 3.206l2.009-11.103c4.1-21.055 9.157-46.954 28.341-47.584 1.398-.071 6.514.063 6.633 3.446.035 1.13-.245 1.418-1.568 4.005-1.347 2.017-1.855 3.734-1.792 5.707.185 5.376 4.273 8.909 10.185 8.696 7.916-.256 10.193-7.963 10.063-11.921-.32-9.3-10.122-15.175-23.1-14.75z"/>
+                    </svg>
+                </a>
+            </li>
+            <li class="flex justify-center p-1">
+                <a href="https://twitter.com/loicsapone" class="p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" title="Voir mon profil Twitter (nouvelle fenêtre)">
+                    <svg class="h-6 w-6 text-gray-200" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>Twitter</title>
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="flex justify-center p-1">
+                <a href="https://www.linkedin.com/in/loicsapone/" class="p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" title="Voir mon profil Linkedin (nouvelle fenêtre)">
+                    <svg class="h-6 w-6 text-gray-200" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>LinkedIn</title>
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </footer>
+{% endblock %}

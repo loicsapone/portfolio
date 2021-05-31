@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .social:after {
+    content: "";
+    @apply h-24 w-1 mt-2 m-auto bg-gray-200;
+  }
+
+  .link {
+    @apply font-bold border-0 border-b-2 border-gray-400 hover:border-gray-600;
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    .w-spacing-2 {
+      word-spacing: 0.5rem;
+    }
+    .w-spacing-4 {
+      word-spacing: 1rem;
+    }
+    .w-spacing-8 {
+      word-spacing: 2rem;
+    }
+  }
+}
