@@ -8,7 +8,7 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "encore production --progress"
+        "build": "NODE_ENV=production encore production --progress"
     },
     "devDependencies": {
         "@fontsource/arvo": "^4.3.0",
