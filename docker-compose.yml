@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+    mailer:
+        image: dockage/mailcatcher:latest
+        restart: on-failure
+        ports:
+            - 1080:1080
+            - 1025:1025

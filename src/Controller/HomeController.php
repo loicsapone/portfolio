@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Form\Type\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -62,9 +63,11 @@ class HomeController extends AbstractController
             ],
         ];
 
+        $form = $this->createForm(ContactType::class);
 
         return $this->render('home/view.html.twig', [
-            'repositories' => $repositories
+            'repositories' => $repositories,
+            'form' => $form->createView()
         ]);
     }
 }

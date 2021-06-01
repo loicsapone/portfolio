@@ -14,3 +14,11 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('#about, #github, #contact').forEach(section => {
     observer.observe(section);
 });
+
+// alert remove after 5 seconds
+const alert = document.querySelector('#flash-message');
+if (null !== alert) {
+    setTimeout(() => {
+        alert.parentNode.removeChild(alert);
+    },5000);
+}

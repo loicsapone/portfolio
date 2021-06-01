@@ -14,6 +14,9 @@
     "doctrine/lexer": {
         "version": "1.2.1"
     },
+    "egulias/email-validator": {
+        "version": "3.1.1"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -133,13 +136,34 @@
     "symfony/intl": {
         "version": "v5.2.7"
     },
+    "symfony/mailer": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "15658c2a0176cda2e7dba66276a2030b52bd81b2"
+        },
+        "files": [
+            "config/packages/mailer.yaml"
+        ]
+    },
+    "symfony/mime": {
+        "version": "v5.3.0-beta3"
+    },
     "symfony/options-resolver": {
         "version": "v5.2.4"
+    },
+    "symfony/password-hasher": {
+        "version": "v5.3.0-rc1"
     },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.22.1"
     },
     "symfony/polyfill-intl-icu": {
+        "version": "v1.22.1"
+    },
+    "symfony/polyfill-intl-idn": {
         "version": "v1.22.1"
     },
     "symfony/polyfill-intl-normalizer": {
@@ -176,6 +200,12 @@
             "config/packages/routing.yaml",
             "config/routes.yaml"
         ]
+    },
+    "symfony/security-core": {
+        "version": "v5.3.0-rc1"
+    },
+    "symfony/security-csrf": {
+        "version": "v5.3.0-rc1"
     },
     "symfony/service-contracts": {
         "version": "v2.4.0"

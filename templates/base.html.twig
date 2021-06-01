@@ -1,3 +1,5 @@
+{% import 'macro/messages.html.twig' as messages %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,5 +19,15 @@
     </head>
     <body class="min-h-screen bg-primary text-white">
         {% block body %}{% endblock %}
+
+        {% if app.request.hasPreviousSession %}
+            {% for message in app.flashes('success') %}
+                {{ messages.success(message) }}
+            {% endfor %}
+
+            {% for message in app.flashes('error') %}
+                {{ messages.error(message) }}
+            {% endfor %}
+        {% endif %}
     </body>
 </html>

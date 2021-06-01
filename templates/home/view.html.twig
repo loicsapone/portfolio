@@ -118,22 +118,30 @@
                     <span class="text-3xl md:text-4xl lg:text-5xl font-bold">On reste en contact</span>
                 </h3>
 
-                <form class="w-full">
+                {% form_theme form 'tailwind_2_layout.html.twig' %}
+                {{ form_start(form, { 'action': path('contact_action'), 'method': 'POST', 'attr': { 'class': 'w-full' } }) }}
                     <div class="grid grid-cols-6 gap-6 ">
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="name" class="font-bold text-gray-200">Nom</label>
-                            <input type="text" name="name" id="name" class="mt-1 w-full bg-primary focus:bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-200 focus:border-transparent">
-                        </div>
+                        {{ form_row(form.name, {
+                            row_class: 'col-span-6 sm:col-span-3',
+                            label_class: 'font-bold text-gray-200',
+                            widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent'
+                        }) }}
 
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="email" class="font-bold text-gray-200">Email</label>
-                            <input type="email" name="email" id="email" class="mt-1 w-full bg-primary focus:bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-200 focus:border-transparent">
-                        </div>
+                        {{ form_row(form.email, {
+                            row_class: 'col-span-6 sm:col-span-3',
+                            label_class: 'font-bold text-gray-200',
+                            widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent'
+                        }) }}
 
-                        <div class="col-span-6">
-                            <label for="message" class="font-bold text-gray-200">Message</label>
-                            <textarea name="message" id="message" class="mt-1 w-full bg-primary focus:bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-200 focus:border-transparent" cols="30" rows="10"></textarea>
-                        </div>
+                        {{ form_row(form.message, {
+                            row_class: 'col-span-6',
+                            label_class: 'font-bold text-gray-200',
+                            widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent',
+                            attr: {
+                                cols: 30,
+                                rows: 10
+                            }
+                        }) }}
                     </div>
 
                     <div class="flex justify-start w-full mt-1">
@@ -141,7 +149,7 @@
                             Envoyer
                         </button>
                     </div>
-                </form>
+                {{ form_end(form) }}
             </div>
         </section>
     </main>
