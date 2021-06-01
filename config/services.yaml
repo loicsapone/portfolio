@@ -12,3 +12,7 @@ services:
     App\Controller\:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
+
+    App\Service\GithubService:
+        arguments:
+            - '%kernel.project_dir%/config/github/repositories.yaml'
