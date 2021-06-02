@@ -204,6 +204,9 @@
             "config/routes.yaml"
         ]
     },
+    "symfony/runtime": {
+        "version": "v5.3.0"
+    },
     "symfony/security-core": {
         "version": "v5.3.0-rc1"
     },
