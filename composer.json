@@ -2,7 +2,7 @@
     "name": "loicsapone/portfolio",
     "description": "My own website",
     "type": "project",
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "php": ">=8.0",
