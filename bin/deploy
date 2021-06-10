@@ -1,5 +1,7 @@
 #!/bin/sh
 
+git pull
+
 php8.0 /usr/local/bin/composer2 install --no-dev --no-progress
 php8.0 /usr/local/bin/composer2 dump-autoload --no-dev --classmap-authoritative
 
