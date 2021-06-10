@@ -22,6 +22,10 @@ Encore
     .enableVersioning(Encore.isProduction())
     .enableSassLoader()
     .enablePostCssLoader()
+    .configureFontRule({
+        type: 'asset',
+        filename: 'fonts/[name][ext]'
+    })
 
     // babel config
     .configureBabel((config) => {
