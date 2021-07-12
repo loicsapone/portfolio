@@ -21,3 +21,4 @@ commands:
         help: Run CI tests
         steps:
             - php ./vendor/bin/php-cs-fixer fix --no-ansi
+            - php ./vendor/bin/phpstan analyse
