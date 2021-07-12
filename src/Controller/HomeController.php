@@ -21,7 +21,7 @@ class HomeController extends AbstractController
     {
         return $this->render('homepage.html.twig', [
             'repositories' => $githubService->getRepositories(),
-            'form' => $this->createForm(ContactType::class)->createView()
+            'form'         => $this->createForm(ContactType::class)->createView(),
         ]);
     }
 }

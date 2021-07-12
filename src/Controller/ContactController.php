@@ -29,22 +29,24 @@ class ContactController extends AbstractController
             );
 
             $context = [
-                'user_ip' => $request->getClientIp(),
-                'user_agent' => $request->headers->get('user-agent'),
-                'referrer' => $request->headers->get('referer'),
-                'permalink' => $request->getUri(),
-                'comment_author' => $contactQuery->getName(),
+                'user_ip'              => $request->getClientIp(),
+                'user_agent'           => $request->headers->get('user-agent'),
+                'referrer'             => $request->headers->get('referer'),
+                'permalink'            => $request->getUri(),
+                'comment_author'       => $contactQuery->getName(),
                 'comment_author_email' => $contactQuery->getEmail(),
-                'comment_content' => $contactQuery->getMessage(),
+                'comment_content'      => $contactQuery->getMessage(),
             ];
 
             if ($akismetService->getSpamScore($context) < 2 && $handler->handle($contactQuery)) {
                 $this->addFlash('success', 'Votre demande de contact a bien été envoyée !');
+
                 return $this->redirectToRoute('home_view');
             }
         }
 
         $this->addFlash('error', 'Désolé, votre message n\'a pas pu être envoyé.');
+
         return $this->redirectToRoute('home_view');
     }
 }

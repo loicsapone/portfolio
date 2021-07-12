@@ -12,7 +12,8 @@ class ContactHandler
 {
     public function __construct(
         private MailerInterface $mailer,
-    ) {}
+    ) {
+    }
 
     public function handle(ContactQuery $query): bool
     {
@@ -23,8 +24,8 @@ class ContactHandler
             ->subject('Portfolio | Nouvelle demande de contact')
             ->htmlTemplate('emails/contact.html.twig')
             ->context([
-                'name' => $query->getName(),
-                'message' => $query-> getMessage(),
+                'name'    => $query->getName(),
+                'message' => $query->getMessage(),
             ]);
 
         try {

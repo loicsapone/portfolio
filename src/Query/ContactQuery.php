@@ -8,7 +8,8 @@ class ContactQuery
         private string $name,
         private string $email,
         private string $message,
-    ) {}
+    ) {
+    }
 
     public function getName(): string
     {
