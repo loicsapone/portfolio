@@ -16,3 +16,8 @@ commands:
         help: Run Yarn watch command
         steps:
             - symfony local:run yarn encore dev-server
+
+    ci:
+        help: Run CI tests
+        steps:
+            - php ./vendor/bin/php-cs-fixer fix --no-ansi
