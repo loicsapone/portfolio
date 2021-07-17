@@ -62,7 +62,7 @@ header {
   @apply font-bold border-0 border-b-2 border-gray-400 hover:border-gray-600;
 }
 
-#about, #github, #contact {
+section {
   opacity: 0;
   transform: translateY(15rem);
 

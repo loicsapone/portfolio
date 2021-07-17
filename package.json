@@ -24,5 +24,9 @@
         "sass-loader": "^11.1.0",
         "tailwindcss": "^2.1.2",
         "webpack-notifier": "^1.6.0"
+    },
+    "dependencies": {
+        "@alpinejs/intersect": "^3.2.1",
+        "alpinejs": "^3.2.2"
     }
 }

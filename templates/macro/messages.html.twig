@@ -1,5 +1,5 @@
 {% macro generate(message, icon_bg, icon_content, ) %}
-    <div id="flash-message" class="fixed inset-x-0 bottom-20 w-5/6 md:w-3/4 lg:w-2/4 mx-auto p-4 bg-gray-500 rounded-lg" role="alert">
+    <div id="flash-message" class="fixed inset-x-0 bottom-20 w-5/6 md:w-3/4 lg:w-2/4 mx-auto p-4 bg-gray-500 rounded-lg" role="alert" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
         <div class="flex items-center justify-between flex-wrap">
             <div class="w-0 flex-1 flex items-center">
                 <span class="flex p-2 rounded-lg {{ icon_bg }}">
