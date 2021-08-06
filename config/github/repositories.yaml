@@ -1,6 +1,12 @@
 github:
     repositories:
         -
+            url: https://github.com/IQ2i/prestashop-webservice
+            name: IQ2i/prestashop-webservice
+            description: A PHP library that let you interact with PrestaShop API
+            created_at: 2021-04-28T08:48:16Z
+            forked: false
+        -
             url: https://github.com/loicsapone/portfolio
             name: loicsapone/portfolio
             description: My own website
@@ -29,10 +35,4 @@ github:
             name: loicsapone/symfony-docs
             description: The Symfony documentation
             created_at: 2010-02-17T08:43:51Z
-            forked: true
-        -
-            url: https://github.com/loicsapone/PrestaShop
-            name: loicsapone/PrestaShop
-            description: PrestaShop offers a fully scalable open source ecommerce solution.
-            created_at: 2012-11-19T16:41:31Z
             forked: true
