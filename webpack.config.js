@@ -22,6 +22,7 @@ Encore
     .enableVersioning(Encore.isProduction())
     .enableSassLoader()
     .enablePostCssLoader()
+    .enableStimulusBridge('./assets/controllers.json')
     .configureFontRule({
         type: 'asset',
         filename: 'fonts/[name][ext]'

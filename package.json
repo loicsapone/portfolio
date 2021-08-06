@@ -13,6 +13,7 @@
     "devDependencies": {
         "@fontsource/arvo": "^4.3.0",
         "@fontsource/roboto": "^4.3.0",
+        "@symfony/stimulus-bridge": "^2.0.0",
         "@symfony/webpack-encore": "^1.0.0",
         "@tailwindcss/forms": "^0.3.2",
         "autoprefixer": "^10.2.5",
@@ -22,11 +23,9 @@
         "regenerator-runtime": "^0.13.2",
         "sass": "^1.32.12",
         "sass-loader": "^11.1.0",
+        "stimulus": "^2.0.0",
+        "stimulus-use": "^0.25.4",
         "tailwindcss": "^2.1.2",
         "webpack-notifier": "^1.6.0"
-    },
-    "dependencies": {
-        "@alpinejs/intersect": "^3.2.1",
-        "alpinejs": "^3.2.2"
     }
 }
