@@ -41,6 +41,8 @@ Encore
         options.https = {
             pfx: path.join(process.env.HOME, '.symfony/certs/default.p12'),
         }
+
+        delete options.client.host
     })
 ;
 
