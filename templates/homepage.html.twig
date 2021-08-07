@@ -1,5 +1,3 @@
-{% import 'macro/messages.html.twig' as messages %}
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -161,36 +159,36 @@
                     </h2>
 
                     {% form_theme form 'tailwind_2_layout.html.twig' %}
-                    {{ form_start(form, { 'action': path('contact_action'), 'method': 'POST', 'attr': { 'class': 'w-full' } }) }}
-                    <div class="grid grid-cols-6 gap-6 ">
-                        {{ form_row(form.name, {
-                            row_class: 'col-span-6 sm:col-span-3',
-                            label_class: 'font-bold text-gray-200',
-                            widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent'
-                        }) }}
+                    {{ form_start(form, { 'action': path('contact_action'), 'method': 'POST', 'attr': { 'data-controller': 'contact', 'data-action': 'contact#onSubmit', 'class': 'w-full' } }) }}
+                        <div class="grid grid-cols-6 gap-6 ">
+                            {{ form_row(form.name, {
+                                row_class: 'col-span-6 sm:col-span-3',
+                                label_class: 'font-bold text-gray-200',
+                                widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent'
+                            }) }}
 
-                        {{ form_row(form.email, {
-                            row_class: 'col-span-6 sm:col-span-3',
-                            label_class: 'font-bold text-gray-200',
-                            widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent'
-                        }) }}
+                            {{ form_row(form.email, {
+                                row_class: 'col-span-6 sm:col-span-3',
+                                label_class: 'font-bold text-gray-200',
+                                widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent'
+                            }) }}
 
-                        {{ form_row(form.message, {
-                            row_class: 'col-span-6',
-                            label_class: 'font-bold text-gray-200',
-                            widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent',
-                            attr: {
-                                cols: 30,
-                                rows: 10
-                            }
-                        }) }}
-                    </div>
+                            {{ form_row(form.message, {
+                                row_class: 'col-span-6',
+                                label_class: 'font-bold text-gray-200',
+                                widget_class: 'mt-1 w-full bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent',
+                                attr: {
+                                    cols: 30,
+                                    rows: 10
+                                }
+                            }) }}
+                        </div>
 
-                    <div class="flex justify-start w-full mt-1">
-                        <button type="submit" class="inline-flex justify-center py-2 px-4 bg-primary hover:bg-primary-light rounded-md border border-gray-500">
-                            Envoyer
-                        </button>
-                    </div>
+                        <div class="flex justify-start w-full mt-1">
+                            <button type="submit" class="inline-flex justify-center py-2 px-4 bg-primary hover:bg-primary-light rounded-md border border-gray-500">
+                                Envoyer
+                            </button>
+                        </div>
                     {{ form_end(form) }}
                 </div>
             </section>
@@ -235,14 +233,16 @@
             </ul>
         </footer>
 
-        {% if app.request.hasPreviousSession %}
-            {% for message in app.flashes('success') %}
-                {{ messages.success(message) }}
-            {% endfor %}
+        <div data-controller="alert" data-action="contact:success@window->alert#showSuccess contact:error@window->alert#showError" class="alert hidden fixed inset-x-0 bottom-20 w-5/6 md:w-3/4 lg:w-2/4 mx-auto p-4 bg-gray-500 rounded-lg" role="alert">
+            <div class="flex items-center justify-between flex-wrap">
+                <div class="w-0 flex-1 flex items-center">
+                    <span data-alert-target="svg" class="flex p-2 rounded-lg">
+                        <svg data-alert-target="icon" class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></svg>
+                    </span>
 
-            {% for message in app.flashes('error') %}
-                {{ messages.error(message) }}
-            {% endfor %}
-        {% endif %}
+                    <p data-alert-target="message" class="ml-3 font-medium text-white"></p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

@@ -39,14 +39,10 @@ class ContactController extends AbstractController
             ];
 
             if ($akismetService->getSpamScore($context) < 2 && $handler->handle($contactQuery)) {
-                $this->addFlash('success', 'Votre demande de contact a bien été envoyée !');
-
-                return $this->redirectToRoute('home_view');
+                return new Response(null, 204);
             }
         }
 
-        $this->addFlash('error', 'Désolé, votre message n\'a pas pu être envoyé.');
-
-        return $this->redirectToRoute('home_view');
+        return new Response(null, 422);
     }
 }
