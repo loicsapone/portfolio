@@ -14,8 +14,7 @@ Encore
     .addEntry('app', './assets/app.js')
 
     // features
-    .splitEntryChunks()
-    .enableSingleRuntimeChunk()
+    .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
@@ -23,10 +22,6 @@ Encore
     .enableSassLoader()
     .enablePostCssLoader()
     .enableStimulusBridge('./assets/controllers.json')
-    .configureFontRule({
-        type: 'asset',
-        filename: 'fonts/[name][ext]'
-    })
 
     // babel config
     .configureBabel((config) => {
