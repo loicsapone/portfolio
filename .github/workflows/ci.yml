@@ -23,6 +23,11 @@ jobs:
                   php-version: '8.0'
                   tools: composer
 
+            - name: Setup Node
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
+
             - name: Get composer cache directory
               id: composercache
               run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -35,10 +40,15 @@ jobs:
                   restore-keys: ${{ runner.os }}-composer-
 
             - name: Install dependencies
-              run: composer install --prefer-dist --no-progress
+              run: |
+                composer install --prefer-dist --no-progress
+                yarn install
 
             - name: Test PHP-CS-Fixer
               run: ./vendor/bin/php-cs-fixer fix --dry-run --diff --no-ansi
 
             - name: Test PHPStan
               run: ./vendor/bin/phpstan analyse
+
+            - name: Test ESLint
+              run: yarn run lint
