@@ -3,10 +3,10 @@ import { Controller } from 'stimulus';
 
 export default class extends Controller {
     connect() {
-        useIntersection(this)
+        useIntersection(this);
     }
 
     appear() {
-        if (!this.element.classList.contains('animate')) this.element.classList.add('animate')
+        if (!this.element.classList.contains('animate')) this.element.classList.add('animate');
     }
 }

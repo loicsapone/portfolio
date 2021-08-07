@@ -22,3 +22,4 @@ commands:
         steps:
             - php ./vendor/bin/php-cs-fixer fix --no-ansi
             - php ./vendor/bin/phpstan analyse
+            - yarn run lint --fix
