@@ -33,6 +33,6 @@ export default class extends Controller {
         setTimeout(() => {
             this.element.classList.remove('animate-out');
             this.element.classList.add('hidden');
-        }, 5500);
+        }, 5000);
     }
 }
