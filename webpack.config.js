@@ -23,6 +23,12 @@ Encore
     .enablePostCssLoader()
     .enableStimulusBridge('./assets/controllers.json')
 
+    // copy images
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]'
+    })
+
     // babel config
     .configureBabel((config) => {
         config.plugins.push('@babel/plugin-proposal-class-properties');
