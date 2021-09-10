@@ -35,6 +35,19 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Loïc Sapone",
+                "image": "https://loic-sapone.fr/og.png",
+                "description": "Développeur web basé à Grenoble - associé chez Mezcalito, compétant en backend et devops",
+                "email": "mailto:loic@sapone.fr",
+                "jobTitle": "Web Developer",
+                "url": "https://loic-sapone.fr"
+            }
+        </script>
     </head>
 
     <body class="min-h-screen bg-primary text-white">
