@@ -45,10 +45,19 @@ jobs:
                 yarn install
 
             - name: Test PHP-CS-Fixer
-              run: ./vendor/bin/php-cs-fixer fix --dry-run --diff --no-ansi
+              run: php vendor/bin/php-cs-fixer fix --dry-run --diff --no-ansi
 
             - name: Test PHPStan
-              run: ./vendor/bin/phpstan analyse
+              run: php vendor/bin/phpstan analyse
+
+            - name: Test Symfony Container
+              run: php bin/console lint:container
+
+            - name: Test Yaml files
+              run: php bin/console lint:yaml config/
+
+            - name: Test Twig files
+              run: php bin/console lint:twig templates/
 
             - name: Test ESLint
               run: yarn run lint

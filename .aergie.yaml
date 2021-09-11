@@ -20,6 +20,9 @@ commands:
     ci:
         help: Run CI tests
         steps:
-            - php ./vendor/bin/php-cs-fixer fix --no-ansi
-            - php ./vendor/bin/phpstan analyse
+            - php vendor/bin/php-cs-fixer fix --no-ansi
+            - php vendor/bin/phpstan analyse
+            - php bin/console lint:container
+            - php bin/console lint:yaml config/
+            - php bin/console lint:twig templates/
             - yarn run lint --fix
