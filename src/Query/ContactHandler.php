@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Query;
 
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 class ContactHandler
 {
@@ -17,16 +17,17 @@ class ContactHandler
 
     public function handle(ContactQuery $query): bool
     {
-        $email = (new TemplatedEmail())
+        $email = (new Email())
             ->from($query->getEmail())
             ->replyTo($query->getEmail())
             ->to('loic@sapone.fr')
             ->subject('Portfolio | Nouvelle demande de contact')
-            ->htmlTemplate('emails/contact.html.twig')
-            ->context([
-                'name'    => $query->getName(),
-                'message' => $query->getMessage(),
-            ]);
+            ->html(sprintf(
+                '<strong>%s</strong> (%s) vous a contacté via le formulaire de contact :<br /><br />%s',
+                $query->getName(),
+                $query->getEmail(),
+                $query->getMessage()
+            ));
 
         try {
             $this->mailer->send($email);

@@ -25,7 +25,7 @@ class ContactController extends AbstractController
             $contactQuery = new ContactQuery(
                 $form->get('name')->getData(),
                 $form->get('email')->getData(),
-                $form->get('message')->getData(),
+                strip_tags($form->get('message')->getData()),
             );
 
             $context = [
