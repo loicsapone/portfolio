@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Erreur inconnue{% endblock %}
+
+{% block content %}
+    <main class="flex items-center h-screen">
+        <div class="mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <h1 class="md:mr-10 text-6xl md:text-7xl lg:text-8xl font-arvo font-bold">Oops</h1>
+
+                <div class="flex flex-col mt-10 md:mt-0 px-4 md:px-0 md:pl-10 md:border-l-2">
+                    <h2 class="text-center md:text-left text-3xl md:text-4xl lg:text-5xl">Une erreur est survenue !</h2>
+                    <p class="text-center md:text-left lg:text-lg">Malgré toutes nos précautions, le site ne fonctionne plus...</p>
+
+                    <div class="flex mt-6 justify-center">
+                        <a href="https://twitter.com/loicsapone" class="inline-flex justify-center py-2 px-4 bg-primary hover:bg-primary-light rounded-md border border-gray-500">
+                            Me contacter sur Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
