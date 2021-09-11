@@ -16,7 +16,6 @@ services:
     App\Service\AkismetService:
         arguments:
             $akismetApiKey: '%env(AKISMET_API_KEY)%'
-            $appDefaultUri: '%env(APP_DEFAULT_URI)%'
 
     App\Service\GithubService:
         arguments:
