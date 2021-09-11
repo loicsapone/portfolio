@@ -2,7 +2,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
     mode: 'jit',
-    purge: ['./templates/**/*.html.twig'],
+    purge: [
+        './templates/**/*.html.twig',
+        './templates/**/*.svg',
+    ],
     darkMode: false,
     theme: {
         extend: {
