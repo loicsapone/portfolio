@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+        <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('/site.webmanifest') }}">
+        <link rel="mask-icon" href="{{ asset('/safari-pinned-tab.svg') }}" color="#0a192f">
+        <meta name="msapplication-TileColor" content="#0a192f">
+        <meta name="theme-color" content="#0a192f">
+
+        {% block meta_tags %}
+            <meta property="og:title" content="Loïc Sapone - Développeur web">
+            <meta property="og:description" content="Développeur web basé à Grenoble - associé chez Mezcalito, compétant en backend et devops">
+            <meta property="og:locale" content="fr_FR">
+            <meta property="og:type" content="website">
+            <meta property="og:site_name" content="Loïc Sapone - Développeur web">
+            <meta property="og:image" content="https://loic-sapone.fr/og.png">
+            <meta property="og:url" content="https://loic-sapone.fr/">
+
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@LoicSapone" />
+            <meta name="twitter:domain" content="loic-sapone.fr" />
+            <meta name="twitter:title" content="Loïc Sapone - Développeur web">
+            <meta name="twitter:description" content="Développeur web basé à Grenoble - associé chez Mezcalito, compétant en backend et devops">
+            <meta name="twitter:creator" content="@LoicSapone" />
+            <meta name="twitter:image:alt" content="Loïc Sapone - Développeur web">
+        {% endblock %}
+
+        {% block structured_data %}
+            <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "WebSite",
+                            "@id": "https://loic-sapone.fr/#website",
+                            "url": "https://loic-sapone.fr/",
+                            "name": "Loïc Sapone - Développeur web",
+                            "description": "Développeur web basé à Grenoble - associé chez Mezcalito, compétant en backend et devops",
+                            "inLanguage": "fr_FR",
+                            "publisher": {
+                                "@id": "https://loic-sapone.fr/#person"
+                            }
+                        },
+                        {
+                            "@type": "Person",
+                            "@id": "https://loic-sapone.fr/#person",
+                            "name": "Loïc Sapone",
+                            "email": "mailto:loic@sapone.fr",
+                            "jobTitle": "Web Developer",
+                            "image": {
+                                "@type": "ImageObject",
+                                "@id": "https://loic-sapone.fr/#personImage",
+                                "url": "https://secure.gravatar.com/avatar/2e86e71232909590eacd0b6506e793e9?s=96&d=retro",
+                                "width": 96,
+                                "height": 96,
+                                "caption": "Loïc Sapone - Développeur web"
+                            },
+                            "sameAs": [
+                                "https://connect.symfony.com/profile/loic_sapone",
+                                "https://github.com/loicsapone",
+                                "https://twitter.com/loicsapone",
+                                "https://www.linkedin.com/in/loicsapone/"
+                            ]
+                        }
+                    ]
+                }
+            </script>
+        {% endblock %}
+
+        {% block preloading %}
+            <link rel="preload" href="{{ preload(asset('build/fonts/arvo-latin-700-normal.woff2'), { as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }) }}" as="font" type="font/woff2" crossorigin="anonymous">
+            <link rel="preload" href="{{ preload(asset('build/fonts/roboto-latin-400-normal.woff2'), { as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }) }}" as="font" type="font/woff2" crossorigin="anonymous">
+            <link rel="preload" href="{{ preload(asset('build/fonts/roboto-latin-700-normal.woff2'), { as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }) }}" as="font" type="font/woff2" crossorigin="anonymous">
+            <link rel="preload" href="{{ preload(asset('build/app.css'), { as: 'style' }) }}" as="style">
+            <link rel="preload" href="{{ preload(asset('build/app.js'), { as: 'script' }) }}" as="script">
+        {% endblock %}
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+
+    <body class="min-h-screen bg-primary text-white">
+        {% block content %}{% endblock %}
+
+        <footer class="flex justify-center items-center max-w-4xl mx-auto py-8">
+            <ul class="lg:hidden flex">
+                <li class="flex justify-center p-1">
+                    <a href="https://github.com/loicsapone" class="p-1 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" rel="noopener" title="Voir mon profil Github (nouvelle fenêtre)">
+                        {{ source('svg/github.svg') }}
+                    </a>
+                </li>
+                <li class="flex justify-center p-1">
+                    <a href="https://connect.symfony.com/profile/loic_sapone" class="p-1 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" rel="noopener" title="Voir mon profil Symfony Connect (nouvelle fenêtre)">
+                        {{ source('svg/symfony.svg') }}
+                    </a>
+                </li>
+                <li class="flex justify-center p-1">
+                    <a href="https://twitter.com/loicsapone" class="p-1 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" rel="noopener" title="Voir mon profil Twitter (nouvelle fenêtre)">
+                        {{ source('svg/twitter.svg') }}
+                    </a>
+                </li>
+                <li class="flex justify-center p-1">
+                    <a href="https://www.linkedin.com/in/loicsapone/" class="p-1 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-200" target="_blank" rel="noopener" title="Voir mon profil Linkedin (nouvelle fenêtre)">
+                        {{ source('svg/linkedin.svg') }}
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+        <div data-controller="alert" data-action="contact:success@window->alert#showSuccess contact:error@window->alert#showError" class="alert hidden fixed inset-x-0 bottom-20 w-5/6 md:w-3/4 lg:w-2/4 mx-auto p-4 bg-gray-500 rounded-lg" role="alert">
+            <div class="flex items-center justify-between flex-wrap">
+                <div class="w-0 flex-1 flex items-center">
+                    <span data-alert-target="svg" class="flex p-2 rounded-lg">
+                        <svg data-alert-target="icon" class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"></svg>
+                    </span>
+
+                    <p data-alert-target="message" class="ml-3 font-medium text-white"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

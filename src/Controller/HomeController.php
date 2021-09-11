@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home_view', methods: ['GET'])]
     public function __invoke(GithubService $githubService): Response
     {
-        $response = $this->render('homepage.html.twig', [
+        $response = $this->render('home/index.html.twig', [
             'repositories' => $githubService->getRepositories(),
             'form'         => $this->createForm(ContactType::class)->createView(),
         ]);
