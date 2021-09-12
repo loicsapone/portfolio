@@ -35,6 +35,8 @@ class ContactSubscriber implements EventSubscriberInterface
 
         $context = [
             'blog'                 => $request->getSchemeAndHttpHost(),
+            'blog_lang'            => 'fr',
+            'blog_charset'         => 'UTF-8',
             'user_ip'              => $request->getClientIp(),
             'user_agent'           => $request->headers->get('user-agent'),
             'referrer'             => $request->headers->get('referer'),
@@ -42,6 +44,8 @@ class ContactSubscriber implements EventSubscriberInterface
             'comment_author'       => $contact->getName(),
             'comment_author_email' => $contact->getEmail(),
             'comment_content'      => $contact->getMessage(),
+            'comment_type'         => 'contact-form',
+            'comment_date_gmt'     => (new \DateTime())->format('c'),
         ];
 
         if ($this->akismetService->isSpam($context)) {
@@ -64,9 +68,12 @@ class ContactSubscriber implements EventSubscriberInterface
 
         try {
             $this->mailer->send($email);
-            $this->logger->info('Contact email sent.');
         } catch (TransportExceptionInterface $e) {
             $this->logger->error(sprintf('Error during contact sending: %s', $e->getMessage()));
+
+            return;
         }
+
+        $this->logger->info('Contact email sent.');
     }
 }

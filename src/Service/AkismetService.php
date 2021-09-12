@@ -3,38 +3,36 @@
 namespace App\Service;
 
 use Psr\Log\LoggerInterface;
+use Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class AkismetService
 {
     public function __construct(
-        private string $akismetApiKey,
-        private HttpClientInterface $client,
+        private HttpClientInterface $akismetClient,
         private LoggerInterface $logger,
     ) {
     }
 
     public function isSpam(array $context): bool
     {
-        $response = $this->client->request('POST', sprintf('https://%s.rest.akismet.com/1.1/comment-check', $this->akismetApiKey), [
-            'body' => array_merge($context, [
-                'comment_type'     => 'contact-form',
-                'comment_date_gmt' => (new \DateTime())->format('c'),
-                'blog_lang'        => 'fr',
-                'blog_charset'     => 'UTF-8',
-            ]),
-        ]);
+        try {
+            $response = $this->akismetClient->request('POST', '/1.1/comment-check', ['body' => $context]);
 
-        $headers = $response->getHeaders();
-        if ('discard' === ($headers['x-akismet-pro-tip'][0] ?? '')) {
-            return true;
-        }
+            $headers = $response->getHeaders();
+            if ('discard' === ($headers['x-akismet-pro-tip'][0] ?? '')) {
+                return true;
+            }
 
-        $content = $response->getContent();
-        if (isset($headers['x-akismet-debug-help'][0])) {
-            $this->logger->error(sprintf('Unable to check for spam: %s (%s).', $content, $headers['x-akismet-debug-help'][0]));
+            if (isset($headers['x-akismet-debug-help'][0])) {
+                $this->logger->error('Unable to check for spam.');
 
-            return true;
+                return true;
+            }
+        } catch (ExceptionInterface $exception) {
+            $this->logger->error(sprintf('Unable to check for spam: %e', $exception->getMessage()));
+
+            return false;
         }
 
         return false;

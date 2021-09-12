@@ -43,12 +43,8 @@ GRAPHQL;
     {
         try {
             $pinnedItems = $this->githubRepositoriesCache->get('pinned_items', function (ItemInterface $item) {
-                $item->expiresAfter(604800);
-
                 try {
-                    $response = $this->githubClient->request('POST', '/graphql', [
-                        'json' => ['query' => self::QUERY],
-                    ]);
+                    $response = $this->githubClient->request('POST', '/graphql', ['json' => ['query' => self::QUERY]]);
                     $content = $response->toArray();
                 } catch (ExceptionInterface $exception) {
                     $this->logger->error(sprintf('Unable to get Github pinned repositories: %s.', $exception->getMessage()));

@@ -1,6 +1,9 @@
 framework:
     http_client:
         scoped_clients:
+            akismet.client:
+                base_uri: 'https://%env(AKISMET_API_KEY)%.rest.akismet.com'
+
             github.client:
                 base_uri: 'https://api.github.com'
                 headers:
