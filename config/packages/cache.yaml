@@ -1,0 +1,5 @@
+framework:
+    cache:
+        pools:
+            github.repositories.cache:
+                adapter: cache.app
