@@ -81,17 +81,17 @@
                             <a class="col-span-6 md:col-span-3 flex flex-col px-4 py-6 bg-primary-light rounded-md border border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent" href="{{ repository.url }}" rel="noopener" target="_blank" title="Voir le projet {{ repository.name }} (nouvelle fenêtre)">
                                 <div class="flex justify-between">
                                     <h3 class="font-bold">{{ repository.name }}</h3>
-                                    {% if repository.forked %}<small class="text-xs italic">forked</small>{% endif %}
+                                    {% if repository.fork %}<small class="text-xs italic">forked</small>{% endif %}
                                 </div>
 
                                 <span class="flex flex-1 mt-2 text-gray-200">{{ repository.description }}</span>
 
-                                <time class="flex items-center justify-end mt-1 text-gray-400" datetime="{{ repository.created_at|date('Y-m-d H:i:s') }}">
+                                <time class="flex items-center justify-end mt-1 text-gray-400" datetime="{{ repository.createdAt|date('Y-m-d H:i:s') }}">
                                     <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
 
-                                    <span class="ml-2 text-sm">{{ repository.created_at|format_date(pattern='dd LLLL Y', locale='fr') }}</span>
+                                    <span class="ml-2 text-sm">{{ repository.createdAt|format_date(pattern='dd LLLL Y', locale='fr') }}</span>
                                 </time>
                             </a>
                         {% endfor %}

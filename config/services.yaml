@@ -16,7 +16,3 @@ services:
     App\Service\AkismetService:
         arguments:
             $akismetApiKey: '%env(AKISMET_API_KEY)%'
-
-    App\Service\GithubService:
-        arguments:
-            - '%kernel.project_dir%/config/github/repositories.yaml'
