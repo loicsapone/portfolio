@@ -35,6 +35,12 @@
             ".php-cs-fixer.dist.php"
         ]
     },
+    "league/uri-parser": {
+        "version": "1.4.1"
+    },
+    "masterminds/html5": {
+        "version": "2.7.5"
+    },
     "php-cs-fixer/diff": {
         "version": "v2.0.2"
     },
@@ -334,6 +340,21 @@
     },
     "symfony/yaml": {
         "version": "v5.2.7"
+    },
+    "tgalopin/html-sanitizer": {
+        "version": "1.4.0"
+    },
+    "tgalopin/html-sanitizer-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "95b935177db9abb65356fe19e57fe5abd908b5b8"
+        },
+        "files": [
+            "config/packages/html_sanitizer.yaml"
+        ]
     },
     "twig/extra-bundle": {
         "version": "v3.3.0"
