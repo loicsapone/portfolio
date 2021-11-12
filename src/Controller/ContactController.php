@@ -23,8 +23,6 @@ class ContactController extends AbstractController
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        dd($contact);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $eventDispatcher->dispatch(new ContactEvent($contact, $request));
 
