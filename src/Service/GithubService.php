@@ -39,6 +39,9 @@ GRAPHQL;
     ) {
     }
 
+    /**
+     * @return array<Repository>
+     */
     public function getRepositories(): array
     {
         try {

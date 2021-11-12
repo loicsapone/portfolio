@@ -14,6 +14,9 @@ class AkismetService
     ) {
     }
 
+    /**
+     * @param array<string, null|string> $context
+     */
     public function isSpam(array $context): bool
     {
         try {
